@@ -1,6 +1,7 @@
 package de.lulonaut.bots.blackjackbot
 
 import de.lulonaut.bots.blackjackbot.commands.BlackjackCommand
+import io.github.cdimascio.dotenv.Dotenv
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
 import java.io.IOException
@@ -13,9 +14,11 @@ object Main {
     @Throws(IOException::class, InterruptedException::class)
     @JvmStatic
     fun main(args: Array<String>) {
+        val discordToken = Dotenv.load()["DISCORD_TOKEN"]
+
         try {
             //start bot with token
-            jda = JDABuilder.createDefault("")
+            jda = JDABuilder.createDefault(discordToken)
                 .build()
         } catch (e: LoginException) {
             println("The Token is invalid! Please check your config.")

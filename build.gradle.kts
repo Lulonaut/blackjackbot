@@ -20,6 +20,7 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation("net.dv8tion:JDA:4.2.0_225")
     implementation("org.slf4j:slf4j-simple:1.7.12")
+    implementation("io.github.cdimascio:java-dotenv:5.2.2")
 }
 
 val compileKotlin: KotlinCompile by tasks
