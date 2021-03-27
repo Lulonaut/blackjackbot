@@ -5,6 +5,7 @@ build/
 *.iml
 *.ipr
 *.iws
+.env
 
 # IntelliJ
 out/
